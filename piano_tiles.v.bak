@@ -1,0 +1,115 @@
+`default_nettype none
+
+module piano_tiles(CLOCK_50, KEY, SW, LEDR, VGA_X, VGA_Y, VGA_COLOR, plot);
+
+	input wire CLOCK_50;
+	input wire [3:0] KEY;
+	input wire [9:0] SW;
+	output wire [9:0] LEDR;
+	output wire [9:0] VGA_X;
+	output wire [8:0] VGA_Y;
+	output wire [23:0] VGA_COLOR;
+	output wire plot;
+
+	// VGA stuff
+    reg [2:0] color;
+    reg [9:0] X;
+    reg [8:0] Y;
+    reg write = 1;
+    // Decides which column gets its turn with the VGA
+    reg [1:0] vga_turn;
+
+    // States for each column 
+    localparam DRAW_RECT = 3'd0;
+    localparam ERASE_TOP = 3'd1;
+    localparam DRAW_BOTTOM = 3'd2;
+    localparam DELAY = 3'd3;
+    localparam CLEAR_TILE = 3'd4;
+
+    // Column output wires
+    wire [9:0] X1, X2, X3, X4;
+    wire [8:0] Y1, Y2, Y3, Y4;
+    wire [2:0] state1, state2, state3, state4;
+    wire [8:0] start_y1, start_y2, start_y3, start_y4;
+    wire [8:0] end_y1, end_y2, end_y3, end_y4;
+
+    assign LEDR = 10'd0;
+
+    //  cycles through columns
+    always @(posedge CLOCK_50) begin
+        if (!SW[0]) begin
+            vga_turn <= 2'd0;
+        end else begin
+            vga_turn <= vga_turn + 1;
+        end
+    end
+
+    // sets vars for column to use VGA
+    always @(*) begin
+        case (vga_turn)
+            2'd0: begin
+                X = X1;
+                Y = Y1;
+                if (state1 == ERASE_TOP || state1 == CLEAR_TILE) begin
+                    color = 3'b000;
+                end else begin
+                    color = 3'b111;
+                end
+            end
+            2'd1: begin
+                X = X2;
+                Y = Y2;
+                if (state2 == ERASE_TOP || state2 == CLEAR_TILE) begin
+                    color = 3'b000;
+                end else begin
+                    color = 3'b111;
+                end
+            end
+            2'd2: begin
+                X = X3;
+                Y = Y3;
+                if (state3 == ERASE_TOP || state3 == CLEAR_TILE) begin
+                    color = 3'b000;
+                end else begin
+                    color = 3'b111;
+                end
+            end
+            2'd3: begin
+                X = X4;
+                Y = Y4;
+                if (state4 == ERASE_TOP || state4 == CLEAR_TILE) begin
+                    color = 3'b000;
+                end else begin
+                    color = 3'b111;
+                end
+            end
+        endcase
+    end
+
+    // Column 1
+    column #(10'd0, 10'd160, 9'd0, 9'd120) col1 (CLOCK_50, !SW[0], vga_turn, 2'd0, KEY[3], X1, Y1, state1, start_y1, end_y1);
+
+    // Column 2
+    column #(10'd161, 10'd320, 9'd0, 9'd120) col2 (CLOCK_50, !SW[0], vga_turn, 2'd1, KEY[2], X2, Y2, state2, start_y2, end_y2);
+
+    // Column 3
+    column #(10'd321, 10'd480, 9'd0, 9'd120) col3 (CLOCK_50, !SW[0], vga_turn, 2'd2, KEY[1], X3, Y3, state3, start_y3, end_y3);
+
+    // Column 4
+    column #(10'd481, 10'd640, 9'd0, 9'd120) col4 (CLOCK_50, !SW[0], vga_turn, 2'd3, KEY[0], X4, Y4, state4, start_y4, end_y4);
+
+    vga_adapter VGA (
+        .resetn(SW[0]),
+        .clock(CLOCK_50),
+        .color(color),
+        .x(X),
+        .y(Y),
+        .write(write),
+        .VGA_X(VGA_X),
+        .VGA_Y(VGA_Y),
+        .VGA_COLOR(VGA_COLOR),
+        .plot(plot));
+	defparam VGA.RESOLUTION = "640x480";
+	defparam VGA.COLOR_DEPTH = 3;
+
+endmodule
