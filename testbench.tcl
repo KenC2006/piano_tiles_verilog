@@ -37,25 +37,10 @@ add wave sim:/piano_tiles_tb/CLOCK_50
 add wave sim:/piano_tiles_tb/SW
 add wave -hex sim:/piano_tiles_tb/KEY
 
-add wave -divider "Column 1"
-add wave sim:/piano_tiles_tb/dut/col1/state
-add wave -unsigned sim:/piano_tiles_tb/dut/col1/start_y
-add wave -unsigned sim:/piano_tiles_tb/dut/col1/end_y
-
-add wave -divider "Column 2"
-add wave sim:/piano_tiles_tb/dut/col2/state
-add wave -unsigned sim:/piano_tiles_tb/dut/col2/start_y
-add wave -unsigned sim:/piano_tiles_tb/dut/col2/end_y
-
-add wave -divider "Column 3"
-add wave sim:/piano_tiles_tb/dut/col3/state
-add wave -unsigned sim:/piano_tiles_tb/dut/col3/start_y
-add wave -unsigned sim:/piano_tiles_tb/dut/col3/end_y
-
-add wave -divider "Column 4"
-add wave sim:/piano_tiles_tb/dut/col4/state
-add wave -unsigned sim:/piano_tiles_tb/dut/col4/start_y
-add wave -unsigned sim:/piano_tiles_tb/dut/col4/end_y
+add wave -divider "Score"
+add wave -unsigned sim:/piano_tiles_tb/dut/score
+add wave -binary sim:/piano_tiles_tb/dut/HEX0
+add wave -binary sim:/piano_tiles_tb/dut/HEX1
 
 # Run simulation
 echo "Running simulation..."

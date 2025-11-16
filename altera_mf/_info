@@ -9,7 +9,7 @@ z2
 cModel Technology
 Z0 dC:/workspace/verilog/projectCompileV
 valtpll
-Z1 !s110 1762742445
+Z1 !s110 1763328335
 !i10b 1
 !s100 WV0FoM7hC]LmhbiIY8GIB1
 IzPiz1Rz[f6cbc<QghJIOo0
@@ -23,7 +23,7 @@ Z6 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z7 !s108 1762742445.000000
+Z7 !s108 1763328335.000000
 Z8 !s107 altera_stubs.v|
 Z9 !s90 -reportprogress|300|-work|altera_mf|altera_stubs.v|
 !i113 1

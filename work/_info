@@ -9,68 +9,26 @@ z2
 cModel Technology
 Z0 dC:/workspace/verilog/projectCompileV
 vcolumn
-Z1 !s110 1762742445
+Z1 !s110 1763328335
 !i10b 1
-!s100 =hHOOI1X2XP?^U0:^k`Kl1
-ISYP`]GED=9_H`Dd839P:S3
+!s100 8eGVn8OMHjbAG:Fa6DKbB3
+I0S3I7dAG:cBaGHMRoTNeV2
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 R0
-Z3 w1762733529
-Z4 8piano_tiles.v
-Z5 Fpiano_tiles.v
-L0 127
-Z6 OV;L;10.5b;63
+w1763327725
+8piano_tiles.v
+Fpiano_tiles.v
+L0 316
+Z3 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z7 !s108 1762742445.000000
-Z8 !s107 piano_tiles.v|
-Z9 !s90 -reportprogress|300|-work|work|piano_tiles.v|
+Z4 !s108 1763328335.000000
+!s107 piano_tiles.v|
+!s90 -reportprogress|300|-work|work|piano_tiles.v|
 !i113 1
-Z10 o-work work
-Z11 tCvgOpt 0
-vpiano_tiles
-R1
-!i10b 1
-!s100 oVWmY2ngSf_hiE>X3056R1
-I5DMC6R]TF;?8^3TH>^<f00
-R2
-R0
-R3
-R4
-R5
-L0 3
-R6
-r1
-!s85 0
-31
-R7
-R8
-R9
-!i113 1
-R10
-R11
-vpiano_tiles_tb
-R1
-!i10b 1
-!s100 hXRK[a]K@aaogKQ0a@FaP1
-IV::EVk[=n=?o[K44<i:GQ2
-R2
-R0
-w1762731867
-8piano_tiles_tb.v
-Fpiano_tiles_tb.v
-L0 3
-R6
-r1
-!s85 0
-31
-R7
-!s107 piano_tiles_tb.v|
-!s90 -reportprogress|300|-work|work|piano_tiles_tb.v|
-!i113 1
-R10
-R11
+Z5 o-work work
+Z6 tCvgOpt 0
 vvga_adapter
 R1
 !i10b 1
@@ -78,20 +36,20 @@ R1
 IUBbMD<bI=iXH]=KLO^XD<3
 R2
 R0
-Z12 w1762718487
+Z7 w1762718487
 8vga_adapter.v
 Fvga_adapter.v
 L0 42
-R6
+R3
 r1
 !s85 0
 31
-R7
+R4
 !s107 vga_adapter.v|
 !s90 -reportprogress|300|-work|work|vga_adapter.v|
 !i113 1
-R10
-R11
+R5
+R6
 vvga_address_translator
 R1
 !i10b 1
@@ -99,20 +57,20 @@ R1
 I_2<=:anoVjc5izKhF>6eX2
 R2
 R0
-R12
+R7
 8vga_address_translator.v
 Fvga_address_translator.v
 L0 4
-R6
+R3
 r1
 !s85 0
 31
-R7
+R4
 !s107 vga_address_translator.v|
 !s90 -reportprogress|300|-work|work|vga_address_translator.v|
 !i113 1
-R10
-R11
+R5
+R6
 vvga_controller
 R1
 !i10b 1
@@ -120,20 +78,20 @@ R1
 IG[d6Rd8E3OCFbo18XcWBB2
 R2
 R0
-R12
+R7
 8vga_controller.v
 Fvga_controller.v
 L0 8
-R6
+R3
 r1
 !s85 0
 31
-R7
+R4
 !s107 vga_controller.v|
 !s90 -reportprogress|300|-work|work|vga_controller.v|
 !i113 1
-R10
-R11
+R5
+R6
 vvga_pll
 R1
 !i10b 1
@@ -145,13 +103,13 @@ w1762719166
 8vga_pll.v
 Fvga_pll.v
 L0 36
-R6
+R3
 r1
 !s85 0
 31
-R7
+R4
 !s107 vga_pll.v|
 !s90 -reportprogress|300|-work|work|vga_pll.v|
 !i113 1
-R10
-R11
+R5
+R6
